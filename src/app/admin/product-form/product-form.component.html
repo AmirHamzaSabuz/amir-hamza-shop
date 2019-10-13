@@ -24,10 +24,14 @@
     <div class="form-group">
         <label for="category">Category</label>
         <select
+            ngModel name ="category"
             id="category"
             class="form-control"
         >
-            <option value></option>
+            <option value=""></option>
+            <option *ngFor="let c of categories$ | async" [value]="c.$key">
+              {{ c.payload.val().name}}
+            </option>
         </select>
     </div>
     <div class="form-group">
