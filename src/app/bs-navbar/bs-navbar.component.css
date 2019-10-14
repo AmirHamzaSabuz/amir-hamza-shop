@@ -5,3 +5,39 @@
 .dropdown-item {
 	cursor: pointer;
 }
+.navbar-brand {
+	font-weight: bold;
+	color: white;
+}
+.navbar-brand:hover {
+	color: #eaeaea;
+}
+.nav-link {
+	color: white;
+}
+.nav-link:hover {
+	color: #eaeaea;
+}
+#dropdown01 {
+	color: white;
+}
+
+#dropdown01:hover {
+	color: #eaeaea;
+}
+.dropdown-menu {
+	background-color: #cc0000;
+}
+.dropdown-item {
+	color: white;
+}
+.dropdown-item:hover {
+	color: #cc0000;
+	background-color: #eaeaea;
+}
+#logout {
+	color: white;
+}
+#logout:hover {
+	color: #cc0000;
+}

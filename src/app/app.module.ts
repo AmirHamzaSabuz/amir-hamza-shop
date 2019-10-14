@@ -25,8 +25,8 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './auth-guard.service';
 import { AdminAuthGuardService } from './admin-auth-guard.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
-import {FormsModule} from '@angular/forms';
-import {CustomFormsModule} from 'ng2-validation';
+import { FormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
 	declarations: [
@@ -45,8 +45,8 @@ import {CustomFormsModule} from 'ng2-validation';
 	],
 	imports: [
 		BrowserModule,
-    FormsModule,
-    CustomFormsModule,
+		FormsModule,
+		CustomFormsModule,
 		AppRoutingModule,
 
 		AngularFireModule.initializeApp(environment.firebase),
@@ -75,14 +75,20 @@ import {CustomFormsModule} from 'ng2-validation';
 				component: MyOrdersComponent,
 				canActivate: [ AuthGuardService ]
 			},
-			{
-				path: 'admin/admin-products',
-				component: AdminProductsComponent,
-				canActivate: [ AuthGuardService, AdminAuthGuardService ]
-			},
+
 			{
 				path: 'admin/admin-products/new',
 				component: ProductFormComponent,
+				canActivate: [ AuthGuardService, AdminAuthGuardService ]
+			},
+			{
+				path: 'admin/admin-products/:id',
+				component: ProductFormComponent,
+				canActivate: [ AuthGuardService, AdminAuthGuardService ]
+			},
+			{
+				path: 'admin/admin-products',
+				component: AdminProductsComponent,
 				canActivate: [ AuthGuardService, AdminAuthGuardService ]
 			},
 			{
