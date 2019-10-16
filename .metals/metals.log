@@ -48,3 +48,19 @@ INFO  time: initialize in 1.3s
 WARN  no build tool detected in workspace 'C:\0AngularWorkingSpace2\amir-hamza-shop'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 INFO  time: initialize in 1.18s
 WARN  no build tool detected in workspace 'C:\0AngularWorkingSpace2\amir-hamza-shop'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+Oct 15, 2019 12:50:53 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+Oct 15, 2019 12:50:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+INFO  time: initialize in 1.52s
+WARN  no build tool detected in workspace 'C:\0AngularWorkingSpace2\amir-hamza-shop'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+Oct 15, 2019 4:24:27 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+INFO  time: initialize in 1.91s
+WARN  no build tool detected in workspace 'C:\0AngularWorkingSpace2\amir-hamza-shop'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+INFO  shutting down Metals
+INFO  time: initialize in 1.56s
+WARN  no build tool detected in workspace 'C:\0AngularWorkingSpace2\amir-hamza-shop'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+INFO  shutting down Metals
+INFO  time: initialize in 1.33s
+WARN  no build tool detected in workspace 'C:\0AngularWorkingSpace2\amir-hamza-shop'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
