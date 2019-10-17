@@ -29,7 +29,6 @@ import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 import { DataTableModule } from 'angular7-data-table';
 
-
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -49,9 +48,9 @@ import { DataTableModule } from 'angular7-data-table';
 		BrowserModule,
 		FormsModule,
 		CustomFormsModule,
-    AppRoutingModule,
+		AppRoutingModule,
 
-    DataTableModule.forRoot(),
+		DataTableModule.forRoot(),
 
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFireDatabaseModule,
@@ -59,7 +58,7 @@ import { DataTableModule } from 'angular7-data-table';
 		NgbModule,
 
 		RouterModule.forRoot([
-			{ path: '', component: HomeComponent },
+			{ path: '', component: ProductsComponent },
 			{ path: 'products', component: ProductsComponent },
 			{ path: 'shopping-cart', component: ShoppingCartComponent },
 			{ path: 'login', component: LoginComponent },
