@@ -27,6 +27,8 @@ import { AdminAuthGuardService } from './admin-auth-guard.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
+import { DataTableModule } from 'angular7-data-table';
+
 
 @NgModule({
 	declarations: [
@@ -47,7 +49,9 @@ import { CustomFormsModule } from 'ng2-validation';
 		BrowserModule,
 		FormsModule,
 		CustomFormsModule,
-		AppRoutingModule,
+    AppRoutingModule,
+
+    DataTableModule.forRoot(),
 
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFireDatabaseModule,
