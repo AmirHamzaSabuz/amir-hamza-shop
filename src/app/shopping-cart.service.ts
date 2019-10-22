@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ShoppingCart } from './models/shopping-cart';
+import { map } from 'rxjs/operators';
 @Injectable({
 	providedIn: 'root'
 })
@@ -15,9 +16,12 @@ export class ShoppingCartService {
 		});
 	}
 
-	async getCart(): Promise<AngularFireObject<ShoppingCart>>  {
+	async getCart(): Promise<Observable<ShoppingCart>> {
 		let cartId = await this.getOrCreateCartId();
-		return this.db.object('/shopping-carts/' + cartId);
+		return this.db
+			.object('/shopping-carts/' + cartId)
+			.snapshotChanges()
+			.pipe(map((x) => new ShoppingCart(x.payload.exportVal().items)));
 	}
 
 	private getItem(cartId: string, productId: string) {
@@ -35,14 +39,14 @@ export class ShoppingCartService {
 	}
 
 	async addToCart(product: Product) {
-    this.updateItemQuantity(product, 1);
-  }
+		this.updateItemQuantity(product, 1);
+	}
 
-  async removeFromCart(product: Product){
+	async removeFromCart(product: Product) {
 		this.updateItemQuantity(product, -1);
-  }
+	}
 
-  private async updateItemQuantity(product: Product, change: number){
+	private async updateItemQuantity(product: Product, change: number) {
 		let cartId = await this.getOrCreateCartId();
 		let item$ = this.getItem(cartId, product.key);
 		item$.snapshotChanges().pipe(take(1)).subscribe((item) => {
@@ -52,5 +56,5 @@ export class ShoppingCartService {
 				item$.set({ product: product, quantity: 1 });
 			}
 		});
-  }
+	}
 }
