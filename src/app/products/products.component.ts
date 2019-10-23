@@ -12,20 +12,22 @@ import { ShoppingCart } from '../models/shopping-cart';
 	templateUrl: './products.component.html',
 	styleUrls: [ './products.component.css' ]
 })
-export class ProductsComponent implements OnInit, OnDestroy {
+export class ProductsComponent implements OnInit {
 	products: Product[] = [];
 	filteredProducts: Product[] = [];
 	category: string;
-	cart: any;
+	cart$: Observable<ShoppingCart>;
 	subscription: Subscription;
 	constructor(
 		private route: ActivatedRoute,
 		private productService: ProductService,
 		private shoppingCartService: ShoppingCartService
-	) {}
+	) {
+		this.subscription = this.productService.getAll().subscribe((products) => products);
+	}
 
 	async ngOnInit() {
-		this.subscription = (await this.shoppingCartService.getCart()).subscribe((cart) => (this.cart = cart));
+		this.cart$ = await this.shoppingCartService.getCart();
 		this.populateProducts();
 	}
 
